@@ -1,21 +1,83 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal, Renderer2, ElementRef } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
+
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+
+
+
+
+
+export class App implements OnInit {
+  renderer: Renderer2;
+  myButton: ElementRef;
+
+  constructor(renderer: Renderer2, myButton: ElementRef) {
+    this.renderer = renderer;
+    this.myButton = myButton;
+  }
+
+ clickHandler() {
+    const div = this.renderer.createElement('div');
+    const text = this.renderer.createText('tynkowaniu, posadzkarstwu, tapetowaniu, i oblicowaniu scian.');
+    this.renderer.appendChild(div, text);
+    this.renderer.appendChild(this.myButton.nativeElement, div);
+  }
+
+
+
+
+  ngOnInit(): void {
+
+  }
+openDetails() {
+throw new Error('Method not implemented.');
+}
   protected readonly title = signal('L-Bud');
 
   document: any;
 
 
+
 //str: String = "First ordered list item\n2. Another item\n * Unordered sub-list.\n"
 str: String = ""
 opacity: any = 0;
+
+isSelect = true;
+
+
+control=new FormControl()
+
+
+
+
+
+ myFunction() {
+
+
+   if(this.isSelect){
+
+
+    var image  = document.getElementsByClassName("names")[0];
+
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    x.setAttribute("value", "Proszę wpisać tutaj");
+    x.style.width = "200px";
+    x.className = "images";
+    image.appendChild(x);
+    this.isSelect = false;
+   }
+
+
+}
+
 
 
 

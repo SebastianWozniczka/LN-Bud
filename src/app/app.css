@@ -16,6 +16,125 @@
 
 }
 
+.demo{
+  background-color: black;
+  color: white;
+  padding-left: 7px;
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  cursor: text;
+  min-width: 100vh;
+}
+
+#myButton{
+   background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.topImg{
+
+
+
+  margin-top: 150px;
+   display: flex;
+  flex-direction: column;
+  position: relative;
+  order: -1;
+  text-align: center;
+
+  animation-name: example;
+    animation-duration: 4s;
+  /* animation-iteration-count: infinite;*/
+}
+
+.welcome{
+  position: absolute;
+
+ animation-name: slideUp;
+  animation-duration: 4s;
+
+
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+
+}
+
+.myClass1{
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+
+ @keyframes slideUp {
+    0%,
+    50% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    60%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+
+    }
+  }
+
+
+@keyframes moving {
+    from {transform: translateY(0px);}
+    to {transform: translateY(200px);}
+}
+
+
+@keyframes example {
+    from {background: red;}
+    to {background: pink;}
+}
+
+@keyframes example {
+    0%   {
+        filter: brightness(0.4);
+        filter: contrast(0.4);
+        -webkit-filter: brightness(0.4);
+        -webkit-filter: contrast(0.4);
+    }
+    50%  {
+        filter: brightness(0.4);
+        filter: contrast(0.4);
+        -webkit-filter: brightness(0.4);
+        -webkit-filter: contrast(0.4);
+    }
+    100% {
+        filter: brightness(1);
+        filter: contrast(1);
+        -webkit-filter: brightness(1);
+        -webkit-filter: contrast(1);
+    }
+}
+
+
+.opinion{
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 30px;
+}
 
 .names{
 
@@ -29,6 +148,22 @@ text-transform: uppercase;
  font-weight: 700;
  display: block;
   padding: 10px;
+  cursor: pointer;
+  order: 1;
+}
+
+.btn1{
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 20%;
+  margin-right: 20%;
 
 }
 
@@ -46,6 +181,22 @@ a, a:visited, a:active {
  background-image: url("/public/logoWitryny.png");
  background-color: #aa4e4e;
 }
+
+.images{
+   margin-left: auto 10%;
+    width:9%;
+    height:10%;
+    background-color: yellow;
+    position: absolute;
+    left:  3%;
+    background: #fff;
+    padding: 22px 0;
+    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+
 
 .firm{
      margin-left: auto 10%;
@@ -85,3 +236,10 @@ nav.main-navigation ul a {
     display: block;
     padding: 10px;
 }
+
+.header-search-wrap form.search-form input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+}
+

@@ -174,7 +174,7 @@
   }
 </style>
 -->
-<script type='text/javascript' src="/src/app/script1.js"></script>
+
 
 
       <h1 class="begin">Witamy w {{ title() }}
@@ -186,14 +186,14 @@
       <div class ="names"  >
 
     <a href = "#" ></a>&nbsp;&nbsp;&nbsp;&nbsp;
-     <a href = "#" (mouseenter) ="mouseEnter('div a') "  (mouseleave) ="mouseLeave('div A')">Firma&nbsp;&nbsp;&nbsp;&nbsp;</a>
+     <a href = "#" (mouseenter) ="mouseEnter('div a') "  (mouseleave) ="mouseLeave('div A')">Firma*&nbsp;&nbsp;&nbsp;&nbsp;</a>
     <a href = "#" >Oferta</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href = "#">Realizacje</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href = "#">Cennik</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href = "#">Costam</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href = "#">Partnerzy</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href = "#">Kontakt</a>&nbsp;&nbsp;&nbsp;
-     <a><img src="search.png" width="3%" alt="Krótki opis obrazka"></a>
+     <a><img class = "image"  (mousedown) ="myFunction()" src="search.png" width="4%" height="10%" alt="Krótki opis obrazka"></a>
 
 
 
@@ -203,5 +203,33 @@
          <a href = "#">Referencje</a>&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
 
+      </div>
 
+
+
+      <div class = "topImg">
+        <img src="imgTop.jpg" width="100%" height="700px" alt="Krótki opis obrazka">
+
+
+
+
+        <span class = "welcome">WITAMY W ŁN-BUD</span>
+
+      </div>
+
+      <div class = "opinion">Firma ŁB - Bud istnieje od 2002 roku. Jesteśmy przedsiębiorstwem działającym w budownictwie i przetwórstwie przemysłowym.Ponadto polecamy swoje usługi w zakresie nadzorów i przeglądów budowlanych, kosztorysowania robót ogólnobudowlanych, inwentaryzacji,
+ekspertyz i opinii stanu technicznego obiektów ... </div>
+
+<div id = "myButton"  (click)="clickHandler()">
+Wiecej o nas
+
+</div>
+
+
+
+
+
+
+
+<script type='text/javascript' src="./script.js"></script>
 

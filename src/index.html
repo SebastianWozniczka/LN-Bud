@@ -6,7 +6,57 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="/src/app/script1.js"></script>
+
+
+  <script>
+
+var timer;
+var timerStart;
+var timeSpentOnSite = getTimeSpentOnSite();
+
+function getTimeSpentOnSite(){
+    timeSpentOnSite = parseInt(localStorage.getItem('timeSpentOnSite'));
+    timeSpentOnSite = isNaN(timeSpentOnSite) ? 0 : timeSpentOnSite;
+    return timeSpentOnSite;
+}
+
+function startCounting(){
+    timerStart = Date.now();
+    timer = setInterval(function(){
+        timeSpentOnSite = getTimeSpentOnSite()+(Date.now()-timerStart);
+        localStorage.setItem('timeSpentOnSite',timeSpentOnSite);
+        timerStart = parseInt(Date.now());
+        // Convert to seconds
+        console.log(parseInt(timeSpentOnSite/1000));
+        if(parseInt(timeSpentOnSite/1000) >= 10){
+            timeSpentOnSite = 0;
+            localStorage.setItem('timeSpentOnSite', timeSpentOnSite);
+            element.classList.add("myClass1");
+        }
+    },1000);
+}
+startCounting();
+
+
+console.log("Czas spędzony na stronie: " + parseInt(timeSpentOnSite/1000) + " sekund");
+
+
+createContainer();
+
+  function createContainer() {
+    var e = document.createElement('div');
+    e.style.height = '300px';
+    e.style.maxWidth = '70%';
+    e.style.marginBottom = '50px';
+    document.body.appendChild(e);
+    return e;
+}
+
+
+
+  </script>
+
+
 </head>
 <body>
   <app-root></app-root>
