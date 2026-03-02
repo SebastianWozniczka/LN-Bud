@@ -1,13 +1,17 @@
 import { Component, OnInit, signal, Renderer2, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { NgClass } from "../../node_modules/@angular/common/types/_common_module-chunk";
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
 
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [CommonModule]
 })
 
 
@@ -15,8 +19,12 @@ import { RouterOutlet } from '@angular/router';
 
 
 export class App implements OnInit {
+[x: string]: any;
   renderer: Renderer2;
   myButton: ElementRef;
+
+
+  showMore = false;
 
   constructor(renderer: Renderer2, myButton: ElementRef) {
     this.renderer = renderer;
@@ -26,6 +34,9 @@ export class App implements OnInit {
  clickHandler() {
     const div = this.renderer.createElement('div');
     const text = this.renderer.createText('tynkowaniu, posadzkarstwu, tapetowaniu, i oblicowaniu scian.');
+
+    div.style.color = 'black';
+
     this.renderer.appendChild(div, text);
     this.renderer.appendChild(this.myButton.nativeElement, div);
   }
@@ -51,11 +62,12 @@ opacity: any = 0;
 
 isSelect = true;
 
+public show: boolean = false;
+
+
+
 
 control=new FormControl()
-
-
-
 
 
  myFunction() {

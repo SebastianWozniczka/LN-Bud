@@ -220,16 +220,21 @@
       <div class = "opinion">Firma ŁB - Bud istnieje od 2002 roku. Jesteśmy przedsiębiorstwem działającym w budownictwie i przetwórstwie przemysłowym.Ponadto polecamy swoje usługi w zakresie nadzorów i przeglądów budowlanych, kosztorysowania robót ogólnobudowlanych, inwentaryzacji,
 ekspertyz i opinii stanu technicznego obiektów ... </div>
 
-<div id = "myButton"  (click)="clickHandler()">
+<div id = "myButton"    (click)="clickHandler()">
 Wiecej o nas
 
 </div>
 
 
+<button id = "one" onclick="highlight('fox')">Highlight</button>
 
 
 
 
 
-<script type='text/javascript' src="./script.js"></script>
+<div [ngClass]="showMore ? 'expand' : 'collapse'">
+	Firma ŁB - Bud istnieje od 2002 roku. Jesteśmy przedsiębiorstwem działającym w budownictwie i przetwórstwie przemysłowym.Ponadto polecamy swoje usługi w zakresie nadzorów i przeglądów budowlanych, kosztorysowania robót ogólnobudowlanych, inwentaryzacji,
+ekspertyz i opinii stanu technicznego obiektów ...
+</div>
+<a (click)="showMore = !showMore">{{showMore ? 'Show less' : 'Show more'}}</a>
 
