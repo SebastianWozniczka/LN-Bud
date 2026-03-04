@@ -12,8 +12,6 @@
   cursor: text;
   min-width: 100vh;
   margin: 0;
-
-
 }
 
 .demo{
@@ -46,32 +44,26 @@
 }
 
 .topImg{
-
-
-
-  margin-top: 150px;
-   display: flex;
-  flex-direction: column;
-  position: relative;
-  order: -1;
-  text-align: center;
-
-  animation-name: example;
-    animation-duration: 4s;
-  /* animation-iteration-count: infinite;*/
+ border: 10px solid transparent;
+ border-image: url(/L-Bud/public/imgTop.jpg) 50 round;
+ width: 100%;
+ margin-top: 150px;
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ order: -1;
+ text-align: center;
+ animation-name: example;
+ animation-duration: 4s;
 }
 
 .welcome{
   position: absolute;
-
- animation-name: slideUp;
+  animation-name: slideUp;
   animation-duration: 4s;
-
-
   font-size: 50px;
   color: white;
   font-weight: bold;
-
 }
 
 .myClass1{
@@ -79,7 +71,6 @@
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-
 
  @keyframes slideUp {
     0%,
@@ -92,22 +83,18 @@
     100% {
       transform: translateY(0);
       opacity: 1;
-
     }
   }
-
 
 @keyframes moving {
     from {transform: translateY(0px);}
     to {transform: translateY(200px);}
 }
 
-
 @keyframes example {
     from {background: red;}
     to {background: pink;}
 }
-
 @keyframes example {
     0%   {
         filter: brightness(0.4);
@@ -137,7 +124,6 @@
 }
 
 .names{
-
 font-size: 1.5em;
 font-family: Calibri;
 padding: 50px 0 10px 0;
@@ -164,9 +150,7 @@ text-transform: uppercase;
   cursor: pointer;
   margin-left: 20%;
   margin-right: 20%;
-
 }
-
 
 a, a:visited {
   color: inherit;
@@ -195,9 +179,6 @@ a, a:visited {
     -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
-
-
-
 .firm{
      margin-left: auto 10%;
     width:9%;
@@ -225,7 +206,6 @@ nav.main-navigation ul li ul.sub-menu, nav.main-navigation ul li ul.children {
     visibility: hidden;
     opacity: 0;
 }
-
 
 nav.main-navigation ul a {
     font-size: 13px;
@@ -264,18 +244,12 @@ nav.main-navigation ul a {
   width: 100%;
 }
 
-
-
-
 .collapse {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 10px;
 }
 
 .expand {
   height: auto;
 }
-
-

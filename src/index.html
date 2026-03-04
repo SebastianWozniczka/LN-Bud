@@ -26,7 +26,6 @@ function startCounting(){
         timeSpentOnSite = getTimeSpentOnSite()+(Date.now()-timerStart);
         localStorage.setItem('timeSpentOnSite',timeSpentOnSite);
         timerStart = parseInt(Date.now());
-        // Convert to seconds
         console.log(parseInt(timeSpentOnSite/1000));
         if(parseInt(timeSpentOnSite/1000) >= 10){
             timeSpentOnSite = 0;
@@ -36,21 +35,7 @@ function startCounting(){
     },1000);
 }
 startCounting();
-
-
 console.log("Czas spędzony na stronie: " + parseInt(timeSpentOnSite/1000) + " sekund");
-
-
-/*function highlight(text) {
-  var inputText = document.getElementById("one");
-  var innerHTML = inputText.innerHTML;
-  var index = innerHTML.indexOf(text);
-  if (index >= 0) {
-   innerHTML = innerHTML.substring(0,index) + "<span class='highlight'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
-   inputText.innerHTML = innerHTML;
-  }
-}*/
-
 createContainer();
 
   function createContainer() {
@@ -62,19 +47,17 @@ createContainer();
     return e;
 }
 
-
-
+var image  = document.getElementsByClassName("images").value="search.png";
+const input = 'Hello World';
+const inputLower = input.toLowerCase();
+const charsToFind = 'ol'
+  .toLowerCase();
+if ([...charsToFind].every(char => inputLower.includes(char))) {
+  console.log('all chars are included');
+}
   </script>
-
-
 </head>
 <body>
-
-
-
   <app-root></app-root>
-
-
-
 </body>
 </html>

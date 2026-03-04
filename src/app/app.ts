@@ -4,8 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { NgClass } from "../../node_modules/@angular/common/types/_common_module-chunk";
 import { CommonModule } from '@angular/common';
 
-
-
 @Component({
 
   selector: 'app-root',
@@ -14,17 +12,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 
-
-
-
-
 export class App implements OnInit {
 [x: string]: any;
   renderer: Renderer2;
   myButton: ElementRef;
-
-
-  showMore = false;
+  showMore = true;
 
   constructor(renderer: Renderer2, myButton: ElementRef) {
     this.renderer = renderer;
@@ -41,9 +33,6 @@ export class App implements OnInit {
     this.renderer.appendChild(this.myButton.nativeElement, div);
   }
 
-
-
-
   ngOnInit(): void {
 
   }
@@ -53,10 +42,6 @@ throw new Error('Method not implemented.');
   protected readonly title = signal('L-Bud');
 
   document: any;
-
-
-
-//str: String = "First ordered list item\n2. Another item\n * Unordered sub-list.\n"
 str: String = ""
 opacity: any = 0;
 
@@ -64,35 +49,22 @@ isSelect = true;
 
 public show: boolean = false;
 
-
-
-
 control=new FormControl()
-
-
  myFunction() {
-
-
    if(this.isSelect){
-
-
     var image  = document.getElementsByClassName("names")[0];
 
     var x = document.createElement("INPUT");
     x.setAttribute("type", "text");
     x.setAttribute("value", "Proszę wpisać tutaj");
+    var s = x.getAttribute("value");
+    console.log(s);
     x.style.width = "200px";
     x.className = "images";
     image.appendChild(x);
     this.isSelect = false;
    }
-
-
 }
-
-
-
-
   mouseEnter(div : string){
 
       this.str = 'Szkolenia\nReferencje\n';
@@ -107,28 +79,13 @@ control=new FormControl()
       a.style.display != "none" ? "none" : "block";
 
       this.opacity = 100;
-
-
-      //document.getElementsByClassName('firm')[0].innerHTML += "Szkolenia\nReferencje";
-
-      //document.getElementsByClassName('firm')[0].appendChild(a);
-     // document.body.appendChild(a);
-
    }
-
-
 
    mouseLeave(div : string){
 
-      var a = document.createElement('a');
-     // document.getElementsByClassName("firm")[0].removeAttribute("class");
-    // document.getElementsByClassName('firm')[0].removeChild(a)
-    //this.str.replace("\n", "<br>");
-    this.str = "";
+     var a = document.createElement('a');
+     this.str = "";
      console.log('mouse leave :' + div);
-
-      this.opacity = 0;
-
+     this.opacity = 0;
    }
-
 }
