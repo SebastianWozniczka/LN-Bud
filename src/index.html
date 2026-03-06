@@ -8,7 +8,39 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 
+
+
+
+
   <script>
+
+//document.getElementById('training').style.display = 'none';
+function changeView(){
+
+
+  document.getElementById('middle').innerHTML = document.getElementById('training').innerHTML;
+
+
+ //document.getElementById('training').style.display = 'inline-block';
+ //document.getElementById('training').setAttribute('class', 'visible');
+
+
+
+}
+
+function changeView1(){
+
+
+  document.getElementById('training').innerHTML = document.getElementById('middle').innerHTML;
+
+
+//document.getElementById('middle').style.display = 'inline-block';
+ //document.getElementById('middle').setAttribute('class', 'visible');
+
+
+
+}
+
 
 var timer;
 var timerStart;
@@ -55,7 +87,11 @@ const charsToFind = 'ol'
 if ([...charsToFind].every(char => inputLower.includes(char))) {
   console.log('all chars are included');
 }
+
+
   </script>
+
+
 </head>
 <body>
   <app-root></app-root>

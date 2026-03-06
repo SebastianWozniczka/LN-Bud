@@ -60,7 +60,10 @@ control=new FormControl()
     var s = x.getAttribute("value");
     console.log(s);
     x.style.width = "200px";
+    x.style.height = "30px";
     x.className = "images";
+
+
     image.appendChild(x);
     this.isSelect = false;
    }
