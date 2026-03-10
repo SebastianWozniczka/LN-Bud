@@ -5,8 +5,8 @@
       <div class ="names"  >
         <a href = "#" ></a>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href = "#"   (mouseenter) ="mouseEnter('div a') "  (mouseleave) ="mouseLeave('div A')">Firma*&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        <a href = "#" onclick="changeView()">Oferta</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href = "#" onclick="changeView1()">Realizacje</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href = "#" (click)="changeView2()">Oferta</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href = "#" (click)="changeView()">Realizacje</a>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href = "#">Cennik</a>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href = "#">Costam</a>&nbsp;&nbsp;&nbsp;&nbsp;
        <a href = "#">Partnerzy</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -20,19 +20,8 @@
            <a href = "#">Referencje</a>&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
       </div>
-
-      <div id = "middle">
-      <div class = "topImg">
-         <img src="imgTop.jpg" width="100%" height="700px" alt="Krótki opis obrazka">
-         <span class = "welcome">WITAMY W ŁN-BUD</span>
-      </div>
-
-      <div class = "opinion" [ngClass]="showMore ? 'collapse' : 'expand'">Firma ŁB - Bud istnieje od 2002 roku. Jesteśmy przedsiębiorstwem działającym w budownictwie i przetwórstwie przemysłowym.Ponadto polecamy swoje usługi w zakresie nadzorów i przeglądów budowlanych, kosztorysowania robót ogólnobudowlanych, inwentaryzacji,
-           ekspertyz i opinii stanu technicznego obiektów.
-     </div>
-<div id = "myButton"    (click)="showMore = !showMore">{{showMore ? 'Pokazywać wiecej?' : 'Pokazywać mniej?'}}
-    </div>
-</div>
+       <app-middle *ngIf="value === 0"></app-middle>
+       <app-middle2 *ngIf="value === 1"></app-middle2>
 
 
 <div id = "training" style="display:none;">

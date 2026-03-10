@@ -3,13 +3,16 @@ import { FormControl } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { NgClass } from "../../node_modules/@angular/common/types/_common_module-chunk";
 import { CommonModule } from '@angular/common';
+import { Middle } from "./middle/middle";
+import { Middle2 } from "./middle2/middle2";
+
 
 @Component({
 
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [CommonModule]
+  imports: [CommonModule, Middle, Middle2]
 })
 
 export class App implements OnInit {
@@ -17,6 +20,9 @@ export class App implements OnInit {
   renderer: Renderer2;
   myButton: ElementRef;
   showMore = true;
+
+
+  value: number = 0;
 
   constructor(renderer: Renderer2, myButton: ElementRef) {
     this.renderer = renderer;
@@ -50,6 +56,18 @@ isSelect = true;
 public show: boolean = false;
 
 control=new FormControl()
+
+changeView(){
+  this.value = 1;
+}
+
+changeView2(){
+  this.value = 0;
+}
+
+
+
+
  myFunction() {
    if(this.isSelect){
     var image  = document.getElementsByClassName("names")[0];
@@ -58,6 +76,18 @@ control=new FormControl()
     x.setAttribute("type", "text");
     x.setAttribute("value", "Proszę wpisać tutaj");
     var s = x.getAttribute("value");
+
+const input = 'Proszę wpisać tutaj';
+const inputLower = input.toLowerCase();
+const charsToFind = 'Abazur'
+  .toLowerCase();
+if ([...charsToFind].every(char => inputLower.includes(char))) {
+  console.log('all chars are included');
+
+}
+
+
+
     console.log(s);
     x.style.width = "200px";
     x.style.height = "30px";
