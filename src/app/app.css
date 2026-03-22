@@ -40,6 +40,11 @@
   min-width: 100vh;
 }
 
+.middle2{
+  width:1300px;
+  margin:auto;
+}
+
 #myButton{
    background-color: red;
   border: none;
