@@ -86,8 +86,16 @@ const charsToFind = 'ol'
   .toLowerCase();
 if ([...charsToFind].every(char => inputLower.includes(char))) {
   console.log('all chars are included');
+
+
+
+
+
 }
 
+function start() {
+  document.getElementById("img1").classList.toggle("play-animation");
+}
 
   </script>
 
@@ -95,5 +103,8 @@ if ([...charsToFind].every(char => inputLower.includes(char))) {
 </head>
 <body>
   <app-root></app-root>
+
+
+
 </body>
 </html>

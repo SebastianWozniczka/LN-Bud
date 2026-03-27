@@ -25,6 +25,48 @@
     color: white;
 }
 
+
+
+
+
+
+
+#first-child {
+  height: 200px;
+  width: 200px;
+  background: white;
+  border-radius: 0%;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  margin-left: 500px;
+  margin-right: 0px;
+  }
+  .animate {
+  -webkit-animation: myfirst 3s;
+  animation: myfirst 3s;
+  }
+@keyframes myfirst {
+    0% {background: white;}
+   40% {background: gray;}
+   70% {background: yellow;}
+  100% {background: red;}
+  }
+@-webkit-keyframes myfirst {
+    0% {background: white;}
+   40% {background: gray;}
+   70% {background: yellow;}
+  100% {background: red;}
+  }
+
+#second-parent {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 415px;
+  margin-right: 0px;
+  }
+
+
+
 .demo{
   background-color: black;
   color: white;
@@ -38,11 +80,6 @@
   font-weight: bold;
   cursor: text;
   min-width: 100vh;
-}
-
-.middle2{
-  width:1300px;
-  margin:auto;
 }
 
 #myButton{

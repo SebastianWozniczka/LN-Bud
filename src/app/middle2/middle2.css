@@ -10,6 +10,10 @@
 
 }
 
+.play-animation {
+  animation: rotate 4s linear;
+}
+
 
 .rotate-container {
    width: 200px;

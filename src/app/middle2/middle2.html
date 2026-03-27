@@ -1,9 +1,12 @@
 
-<div class = "middle2">
-<img class = "img1" src="background.png"  (mouseover)="myAnim1()" width="200px" height="100px"  alt="Krótki opis obrazka">
+<div class = "middle2"  (click)="showMore = !showMore">
+<img id =  "img1" src="background.png"   onmousemove="start()" width="200px" height="100px"  alt="Krótki opis obrazka">
 
 
 
       <img class = "img2" src="zwierze.png" width="200px" height="100px"  alt="Krótki opis obrazka">
+
+      <button onclick="start()"></button>
+
 
 </div>
