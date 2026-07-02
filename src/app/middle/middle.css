@@ -1,3 +1,18 @@
+
+
+.move-left {
+    position: absolute;
+    animation: moveleft 2s 1 normal forwards;
+    font-size: 1.17em;
+
+}
+
+@keyframes moveleft {
+   from { transform: translateX(0); }
+   to   { transform: translateX(800px); }
+
+}
+
 .begin {
   background-color: black;
   color: white;
@@ -24,48 +39,6 @@
     text-align: center;
     color: white;
 }
-
-
-
-
-
-
-
-#first-child {
-  height: 200px;
-  width: 200px;
-  background: white;
-  border-radius: 0%;
-  margin-top: 150px;
-  margin-bottom: 0px;
-  margin-left: 500px;
-  margin-right: 0px;
-  }
-  .animate {
-  -webkit-animation: myfirst 3s;
-  animation: myfirst 3s;
-  }
-@keyframes myfirst {
-    0% {background: white;}
-   40% {background: gray;}
-   70% {background: yellow;}
-  100% {background: red;}
-  }
-@-webkit-keyframes myfirst {
-    0% {background: white;}
-   40% {background: gray;}
-   70% {background: yellow;}
-  100% {background: red;}
-  }
-
-#second-parent {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 415px;
-  margin-right: 0px;
-  }
-
-
 
 .demo{
   background-color: black;
@@ -109,6 +82,8 @@
  animation-name: example;
  animation-duration: 4s;
 }
+
+
 
 .welcome{
   position: absolute;
@@ -175,6 +150,9 @@ a, a:visited {
  background-image: url("/public/logoWitryny.png");
  background-color: #aa4e4e;
 }
+
+
+
 
 .images{
    margin-left: auto 10%;
@@ -308,4 +286,3 @@ nav.main-navigation ul a {
         -webkit-filter: contrast(1);
     }
 }
-
