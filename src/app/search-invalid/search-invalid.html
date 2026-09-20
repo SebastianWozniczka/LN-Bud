@@ -1,18 +1,10 @@
-<h1>REZULTATY WYSZUKIWANIA:</h1>
+<section class="search-results">
+  <h2>Wyniki wyszukiwania</h2>
 
-Rezultaty wyszukiwania dla: <b>{{ valueOfForm }}</b>
-
-
-<button *ngIf="valueOfForm === 'Łukasz'">Delete User</button>
-
-<ng-container *ngIf="valueOfForm === 'Łukasz';else second"><br><h2 class = "lukasz"Łukasz to wybitny akrobata. Zajmuje się wszystkim. Nie pije, nie pali i konia nie wali.></h2></ng-container>
-<ng-template #second>
-
-  <ng-container *ngIf="valueOfForm === 'Leszek';else third"><br><h2 class = "leszek">Leszek to znany i ceniony murarz. Wszystko robi jak należy. Także jest abstynentem.</h2></ng-container>
-</ng-template>
-
-<ng-template #third><h2 class = "leszek"></h2></ng-template>
-  <ng-container *ngIf="valueOfForm === 'Oferta';else fourth"><br><h2 class = "leszek"><a href = "Oferta" (click)="changeView2()">Oferta</a>&nbsp;&nbsp;&nbsp;&nbsp;</h2></ng-container>
-
-  <ng-template #fourth><h2 class = "oferta"></h2></ng-template>
-  <ng-container *ngIf="valueOfForm === 'realizacje';else fourth"><br><h2 class = "leszek"><a href = "Realizacje" (click)="changeView2()">Realizacje</a>&nbsp;&nbsp;&nbsp;&nbsp;</h2></ng-container>
+  @if (selectedPerson) {
+    <p>Wyniki wyszukiwania dla: <strong>{{ selectedPerson.name }}</strong></p>
+    <p>{{ selectedPerson.description }}</p>
+  } @else {
+    <p>Brak wyników. Spróbuj wpisać: Leszek lub Łukasz.</p>
+  }
+</section>

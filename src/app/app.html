@@ -1,48 +1,66 @@
+<h1 class="begin">
+  Witamy w {{ title() }}
+  <img src="logoWitryny.png" width="3%" alt="Krótki opis obrazka" />
+</h1>
 
-      <h1 class="begin">Witamy w {{ title() }}
-        <img src="logoWitryny.png" width="3%" alt="Krótki opis obrazka">
-      </h1>
-      <div class ="names">
-        <a href = "#" ></a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href = "#"   (mouseenter) ="mouseEnter('div a') "  (mouseleave) ="mouseLeave('div A')">Firma*&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        <a href = "#" (click)="changeView2()">Oferta</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href = "#" (click)="changeView()">Realizacje</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href = "#" (click)="changeView3()">Cennik</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href = "#">Costam</a>&nbsp;&nbsp;&nbsp;&nbsp;
-       <a href = "#">Partnerzy</a>&nbsp;&nbsp;&nbsp;&nbsp;
-       <a href = "#">Kontakt</a>&nbsp;&nbsp;&nbsp;
+<nav class="names" aria-label="Główna nawigacja">
+  <a href="#" aria-label="Strona główna"></a>
 
-       <a><img class = "image"   (mousedown) ="myFunction()"  src="search.png" width="4%" height="10%" alt="Krótki opis obrazka">
-       </a>
+  <a
+    href="#"
+    (mouseenter)="showCompanyMenu()"
+    (focus)="showCompanyMenu()"
+    (blur)="hideCompanyMenu()"
+    (click)="$event.preventDefault()">
+    Firma*
+  </a>
 
-       <div class="firm" [style.opacity]="opacity"  (mouseenter) ="mouseEnter('div a') "  (mouseleave) ="mouseLeave('div A')">
-           <a href = "#" >Szkolenia</a>&nbsp;&nbsp;&nbsp;&nbsp;
-           <a href = "#">Referencje</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      </div>
-      </div>
-       <app-middle *ngIf="value === 0"></app-middle>
-       <app-middle2 *ngIf="value === 1"></app-middle2>
+  @for (item of navItems; track item.view) {
+    <a href="#" (click)="setView(item.view); $event.preventDefault()">
+      {{ item.label }}
+    </a>
+  }
 
+  <button type="button" class="search-button" aria-label="Szukaj" (click)="toggleSearch()">
+    <img class="image" src="search.png" width="24" height="24" alt="Szukaj" />
+  </button>
 
-<div id = "training" style="display:none;">
-OK
+  @if (isSearchVisible) {
+    <div class="search-panel">
+      <input
+        class="images"
+        type="text"
+        list="person-suggestions"
+        [(ngModel)]="searchValue"
+        [placeholder]="defaultSearchText"
+        (keydown)="handleSearchKeydown($event)"
+        aria-label="Pole wyszukiwania"
+      />
 
+      <datalist id="person-suggestions">
+        @for (person of filteredSuggestions; track person) {
+          <option [value]="person"></option>
+        }
+      </datalist>
 
-</div>
-<app-search-invalid *ngIf="value === 3"></app-search-invalid>
+      <button type="button" class="search-submit" (click)="submitSearch()">Szukaj</button>
+    </div>
+  }
 
-<script>
+  @if (isCompanyMenuVisible) {
+    <div class="firm" (mouseenter)="keepCompanyMenuVisible()" (mouseleave)="hideCompanyMenu()">
+      @for (link of companyLinks; track link) {
+        <a href="#">{{ link }}</a>
+      }
+    </div>
+  }
+</nav>
 
-function valueOfForm() {
-     var strin = "hello"
-for (i = 0; i < strin.length; i++) {
-   document.write(strin.slice(0,i+1))
+@if (activeView === 'offer') {
+  <app-middle />
+} @else if (activeView === 'projects') {
+  <app-middle2 />
+} @else if (activeView === 'search') {
+  <app-search-invalid [personName]="searchValue" />
 }
-}
-
-</script>
-
-
-
-
 

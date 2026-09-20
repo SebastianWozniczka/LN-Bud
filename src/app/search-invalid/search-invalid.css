@@ -1,5 +1,18 @@
+.search-results {
+  padding: 2rem 1.5rem;
+  color: #1f1f1f;
+}
 
+.search-results h2 {
+  margin-bottom: 1rem;
+  color: #1b1b1b;
+}
 
-.leszek, .lukasz {
-  color: rgb(0, 60, 255);
+.search-results p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.search-results strong {
+  color: #0d47a1;
 }
